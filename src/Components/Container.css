@@ -1,0 +1,238 @@
+:root {
+    --section-overlay: rgba(0, 0, 0, 0.7);
+    --background-overlay: rgba(0, 0, 0, 0.2);
+}
+
+.move {
+    display: flex;
+    justify-content: end;
+}
+
+.design-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.combine {
+    width: 50%;
+    margin: auto;
+    height: 50px;
+    background-color: #ae7eae;
+}
+
+.form-group input[type='search'],
+.form-group input[type="text"] {
+    width: 30%;
+    height: auto;
+    opacity: 0.7;
+    color: #0f070c;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+@media screen and (min-width:402px) and (max-width: 576px) {
+    .form-group input[type='search'] {
+        width: 40%;
+    }
+    .combine {
+        width: auto;
+    }
+}
+
+.form-group input[type='search']:focus {
+    border-color: red;
+}
+
+.form-groupinput[type="text"]:focus {
+    border-color: red;
+}
+
+.we-btn {
+    border-top: black;
+    display: flex;
+    position: relative;
+    bottom: 40px;
+    float: right;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+
+.back-design {
+    background-image: url('https://images.pexels.com/photos/547115/pexels-photo-547115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    overflow: scroll;
+}
+
+.icon-1 {
+    width: 8%;
+    height: 8%;
+    margin-top: 7px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.we-btn {
+    background-color: #ba7da2;
+    /* Set background color */
+    color: #ffffff;
+    /* Set text color */
+    font-size: 1.2em;
+    /* Adjust font size */
+    border: 3px solid white;
+    /* Remove border */
+    padding: 7px 5px;
+    /* Add padding for better spacing */
+    cursor: pointer;
+    /* Change cursor on hover */
+    border-radius: 5px;
+    /* Add rounded corners */
+    transition: background-color 0.3s;
+    /* Add transition effect */
+}
+
+.we-btn:hover {
+    background-color: #ede7ec;
+    /* Change background color on hover */
+}
+
+.coord {
+    position: absolute;
+    float: left;
+    bottom: 20px;
+    right: 20px;
+}
+
+.opac {
+    background-color: #ba7da2;
+    animation: header 5s;
+    width: 99%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.navbar-toggler {
+    margin-left: auto;
+}
+
+@keyframes header {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+.header {
+    position: relative;
+    left: 20px;
+    color: black;
+}
+
+.border-design {
+    width: 45%;
+    height: 45%;
+    margin: auto;
+    border-radius: 50px;
+    box-shadow: 10px 10px rgb(123, 73, 73);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    margin-top: 5%;
+    position: relative;
+    border-bottom: 1px solid white;
+}
+
+.form-control {
+    box-shadow: 4px 3px white;
+}
+
+.img-size {
+    width: auto;
+    height: 40%;
+}
+
+.temp-adj {
+    float: right;
+    position: absolute;
+    right: 50px;
+    top: 90px;
+    font-size: 5.5rem;
+}
+
+@media screen and (min-width:402px) and (max-width: 576px) {
+    .border-design {
+        width: auto;
+        height: auto;
+        margin-bottom: 40px;
+    }
+    .temp-adj {
+        font-size: 39px;
+        margin-bottom: 100px
+    }
+    .opac {
+        width: auto;
+        height: auto;
+    }
+    .img-size {
+        height: 20%;
+        width: 30%;
+    }
+    .AQi {
+        position: absolute;
+        /* Adjust position for smaller screens */
+        top: 20px;
+        right: 20px;
+    }
+    .AQi-1 {
+        position: absolute;
+        float: right;
+        top: 40px;
+        right: 2px;
+        font-size: 15px;
+    }
+}
+
+.AQi {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.AQi-1 {
+    float: right;
+    position: absolute;
+    top: 60px;
+    right: 25px;
+    font-size: 110;
+    animation: pulse 1.5s ease-in-out infinite reverse;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 01;
+        /* Adjusted color for mid-animation */
+    }
+}
