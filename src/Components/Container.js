@@ -41,7 +41,7 @@ weatherUpdateHandler = (e) => {
     this.setState({ city , }, () => {
         console.log(city);
     });
-   const apiKey = process.env.REACT_APP_API_KEY;
+     const apiKey = process.env.REACT_APP_API_KEY;
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=standard`)
         .then((res) => {
             this.setState({ weatherData: res.data });
@@ -52,6 +52,9 @@ weatherUpdateHandler = (e) => {
                 axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`)
                     .then((res) => {
                         this.setState({ AQi: res.data }, () => {
+                            console.log('Lat:', lat);
+                            console.log('Lon:', lon);
+                            console.log('API Key:', apiKey);
                             console.log(this.state.AQi);
                             if(this.state.AQi.list[0]?.components?.pm2_5  > 100){
                                this.setState({color : 'red' });

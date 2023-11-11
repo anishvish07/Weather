@@ -202,6 +202,7 @@
         /* Adjust position for smaller screens */
         top: 20px;
         right: 20px;
+        font-size: 15px;
     }
     .AQi-1 {
         position: absolute;
