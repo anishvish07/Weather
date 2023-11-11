@@ -6,9 +6,11 @@ import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Description from './Description';
 import 'animate.css';
+import ContactUsCard from './Weather';
 
 
 class Container extends Component {
+   
     constructor(props){
         super(props);
         this.state = {
@@ -26,18 +28,20 @@ class Container extends Component {
             temp_max:'',
             AQi :'',
             color:'' ,
-            error : null
+            error : null,
+           
             
             
 
             }
     }
     
+    
 weatherUpdateHandler = (e) => {
     e.preventDefault();
-    const city = e.target.parentElement.querySelector('[name="cityname"]').value;
+    let city = e.target.parentElement.querySelector('[name="cityname"]').value;
     
-   
+  
     this.setState({ city , }, () => {
         console.log(city);
     });
@@ -67,14 +71,14 @@ weatherUpdateHandler = (e) => {
                     })
                     .catch((err) => {
                           this.setState({ error: 'An error occurred while fetching weather data.' }, () => {
-          // After setting the error state, you can display it here.
+        
           console.log(this.state.error);
         });
                         console.log(err);
                     });
         }).catch((err) => {
               this.setState({ error: 'An error occurred while fetching weather data.' }, () => {
-          // After setting the error state, you can display it here.
+        
           console.log(this.state.error);
         });
             console.log(err);
@@ -83,30 +87,35 @@ weatherUpdateHandler = (e) => {
 };
 
 
+
+
     render() {
-        const{weatherData , cityname ,temperature , temp_min, pressure , humidity ,windSpeed ,AQi ,color ,error}= this.state;   
+        const{weatherData , cityname ,temperature , temp_min, pressure , humidity ,windSpeed ,AQi ,color ,error ,contact}= this.state;   
         return (
             <Router>
                 <div>
                    <div className='container-fluid'>
     <nav className="navbar navbar-expand-lg opac">
         <Link className="navbar-brand fs-3 text-light header" to="/">
-            <span role="img" aria-label="Weather Icon" ><img className=" icon-1 animate__animated animate__slideRight" src='./hot.png'/>Weather App</span> 
+            <span role="img" aria-label="Weather Icon" ><img className=" icon-1 animate__animated animate__slideRight" src='./rain.png'/>Weather <span className='text-primary fw-bold'>Whiz</span></span> 
+         
         </Link>
         <div className="collapse navbar-collapse move" id="navbarNav">
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                    <Link className="nav-link fs-5" to='/'>Home</Link>
+                <li className="nav-item ">
+                    <Link className="nav-link fs-5 text-light" to='/'>Home</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link fs-5" to='/Contact'>Contact</Link>
                 </li>
             </ul>
+             
         </div>
+       
     </nav> 
       <Routes>
       <Route exact path="/" element={<Home weather={this.weatherUpdateHandler} weatherData = {weatherData ? weatherData : null} AQ = {AQi ? AQi : ''} AQi= {AQi ? AQi.list[0]?.components?.pm2_5  : ""} color ={color ? color : ''} humidity= {weatherData ? weatherData.main.humidity : ''} windSpeed={weatherData ? weatherData.wind.speed :""} pressure={weatherData ?weatherData.main.pressure : ""} temp_max ={weatherData?weatherData.main.temp_max:''} temp_min= {weatherData ? weatherData.main.temp_min :''} feels={weatherData ? weatherData.main.feels_like : ''} cityname ={weatherData ? weatherData.name : ''} temperature = {weatherData ? weatherData.main.temp : ''}  WeatherDescription={weatherData?weatherData.weather[0].description:''} />} />
-   
+      <Route exact path='/Contact' element={<Weather/>}/>
       </Routes>
       </div>
       </div>
@@ -114,5 +123,5 @@ weatherUpdateHandler = (e) => {
         );
     }
 }
-//weatherData data is put up into the render function inside the element section pass the weatherData's with anonymous name and assign it into all this.state...use the in another file by assigning it into render function and the used function inside the tag and that it . 
+
 export default Container;

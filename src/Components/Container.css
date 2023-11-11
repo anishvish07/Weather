@@ -42,7 +42,7 @@
     margin-top: 5px;
 }
 
-@media screen and (min-width:350px) and (max-width: 768px) {
+@media screen and (min-width:350px) and (max-width: 1023px) {
     .form-group input[type='search'] {
         width: 40%;
     }
@@ -120,11 +120,6 @@
     /* Add transition effect */
 }
 
-.we-btn:hover {
-    background-color: #ede7ec;
-    /* Change background color on hover */
-}
-
 .coord {
     position: absolute;
     float: left;
@@ -134,7 +129,7 @@
 
 .opac {
     background-color: #ba7da2;
-    animation: header 5s;
+    animation: header 1.5s;
     width: 99%;
     height: 40px;
     margin-bottom: 10px;
@@ -147,11 +142,25 @@
 
 @keyframes header {
     0% {
+        background-color: #ba7da2;
         opacity: 0.3;
     }
     100% {
         opacity: 0.9;
     }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.header span {
+    animation: fadeIn 3s ease-in-out;
 }
 
 .header {
@@ -189,7 +198,7 @@
     font-size: 5.5rem;
 }
 
-@media screen and (min-width:350px) and (max-width: 768px) {
+@media screen and (min-width:350px) and (max-width: 1023px) {
     .border-design {
         width: auto;
         height: auto;
@@ -211,6 +220,10 @@
     .cardz {
         margin-bottom: 20px;
     }
+    .move {
+        display: flex;
+        justify-content: center;
+    }
     .AQi {
         position: absolute;
         /* Adjust position for smaller screens */
@@ -220,7 +233,6 @@
     }
     .AQi-1 {
         position: absolute;
-        float: right;
         top: 40px;
         right: 2px;
         font-size: 15px;
@@ -253,5 +265,26 @@
     100% {
         opacity: 01;
         /* Adjusted color for mid-animation */
+    }
+}
+
+@media (max-width: 1023px) {
+    .navbar-collapse {
+        display: block !important;
+    }
+    .navbar-nav {
+        flex-direction: row;
+        text-align: right;
+        float: right;
+        position: absolute;
+        top: 19px;
+        right: 5px;
+    }
+    .navbar-nav .nav-item {
+        margin-right: 10px;
+        /* Adjust the margin as needed */
+    }
+    .navbar-toggler {
+        display: none;
     }
 }

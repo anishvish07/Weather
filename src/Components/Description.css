@@ -9,7 +9,7 @@
     border-radius: 15px;
 }
 
-@media screen and (min-width: 350px) and (max-width: 768px) {
+@media screen and (min-width: 350px) and (max-width: 1023px) {
     .containers {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
