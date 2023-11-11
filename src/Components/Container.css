@@ -27,6 +27,11 @@
     background-color: #ae7eae;
 }
 
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
 .form-group input[type='search'],
 .form-group input[type="text"] {
     width: 30%;
@@ -37,7 +42,7 @@
     margin-top: 5px;
 }
 
-@media screen and (min-width:350px) and (max-width: 576px) {
+@media screen and (min-width:350px) and (max-width: 768px) {
     .form-group input[type='search'] {
         width: 40%;
     }
@@ -70,13 +75,14 @@
     height: 100vh;
     background-size: cover;
     overflow: scroll;
+    background-position: center;
 }
 
 .icon-1 {
     width: 8%;
     height: 8%;
     margin-top: 7px;
-    animation: pulse 1.5s ease-in-out infinite;
+    animation: pulse 1s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -91,6 +97,10 @@
     }
 }
 
+.cardz {
+    padding: 10px;
+}
+
 .we-btn {
     background-color: #ba7da2;
     /* Set background color */
@@ -100,7 +110,7 @@
     /* Adjust font size */
     border: 3px solid white;
     /* Remove border */
-    padding: 7px 5px;
+    padding: 5px 5px;
     /* Add padding for better spacing */
     cursor: pointer;
     /* Change cursor on hover */
@@ -179,11 +189,12 @@
     font-size: 5.5rem;
 }
 
-@media screen and (min-width:350px) and (max-width: 576px) {
+@media screen and (min-width:350px) and (max-width: 768px) {
     .border-design {
         width: auto;
         height: auto;
         margin-bottom: 40px;
+        margin: 15px;
     }
     .temp-adj {
         font-size: 39px;
@@ -191,11 +202,14 @@
     }
     .opac {
         width: auto;
-        height: auto;
+        height: 80px;
     }
     .img-size {
         height: 20%;
         width: 30%;
+    }
+    .cardz {
+        margin-bottom: 20px;
     }
     .AQi {
         position: absolute;
@@ -210,6 +224,10 @@
         top: 40px;
         right: 2px;
         font-size: 15px;
+    }
+    .icon-1 {
+        height: 10%;
+        width: 12%;
     }
 }
 

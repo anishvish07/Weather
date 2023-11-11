@@ -37,13 +37,13 @@ const Home = (props) => {
         <label className='design-text mx-3 text-dark' htmlFor='searchOption'></label>
         
         <input type='search' placeholder='Enter The City...' className='form-control ' name='cityname' id='searchOption'   required/>
-          <button className='btn we-btn mx-3' onClick={props.weather}><TiWeatherWindyCloudy/>°C</button>
+          <button className=' we-btn mx-3' onClick={props.weather}><TiWeatherWindyCloudy/>°C</button>
             </div>
         <div className='border-design animate__animated animate__pulse'>
         
          <h1 className='p-4'>{cityname}, {weatherData ? weatherData.sys.country: ""}</h1>
          <h6 className='AQi-1' style={{color : color}}>Air Quality-{levelCheck(AQi)}</h6>
-         <h3 className='AQi'>PM 2.5- {AQi} </h3>
+         <h3 className='AQi'>PM 2.5- {AQi?AQi:""} </h3>
        <img
              className='img-size px-3'
              src={`http://openweathermap.org/img/w/${weatherData ? weatherData.weather[0].icon : ''}.png`}
@@ -61,7 +61,7 @@ const Home = (props) => {
           
         </div> 
        
-        <div>
+        <div className='cardz'>
         <Description feels= {feels} temp_min = {temp_min} temp_max={temp_max} weatherData = {weatherData} pressure = {pressure} humidity ={humidity} windSpeed ={windSpeed} AQ = {AQ}/>
         </div>
          </div>

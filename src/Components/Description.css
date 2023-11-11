@@ -5,9 +5,11 @@
     height: auto;
     background-color: rgba(209, 149, 194, 0.5);
     animation: change 5s;
+    box-shadow: 5px 5px rgba(27, 25, 26, 0.5);
+    border-radius: 15px;
 }
 
-@media screen and (min-width: 350px) and (max-width: 576px) {
+@media screen and (min-width: 350px) and (max-width: 768px) {
     .containers {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

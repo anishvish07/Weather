@@ -46,10 +46,10 @@ weatherUpdateHandler = (e) => {
         .then((res) => {
             this.setState({ weatherData: res.data });
             console.log(this.state.weatherData);
-            //second API call
+            
                 const lat = res.data.coord.lat;
                 const lon = res.data.coord.lon;
-                axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+                axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`)
                     .then((res) => {
                         this.setState({ AQi: res.data }, () => {
                             console.log('Lat:', lat);
@@ -91,7 +91,7 @@ weatherUpdateHandler = (e) => {
                    <div className='container-fluid'>
     <nav className="navbar navbar-expand-lg opac">
         <Link className="navbar-brand fs-3 text-light header" to="/">
-            <span role="img" aria-label="Weather Icon" ><img className=" icon-1 animate__animated animate__slideRight" src='./hot.png'/></span> Weather App
+            <span role="img" aria-label="Weather Icon" ><img className=" icon-1 animate__animated animate__slideRight" src='./hot.png'/>Weather App</span> 
         </Link>
         <div className="collapse navbar-collapse move" id="navbarNav">
             <ul className="navbar-nav ml-auto">
