@@ -41,15 +41,15 @@ weatherUpdateHandler = (e) => {
     this.setState({ city , }, () => {
         console.log(city);
     });
-    const API = process.env.API;
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}&units=standard`)
+   const apiKey = process.env.REACT_APP_API_KEY;
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=standard`)
         .then((res) => {
             this.setState({ weatherData: res.data });
             console.log(this.state.weatherData);
             //second API call
                 const lat = res.data.coord.lat;
                 const lon = res.data.coord.lon;
-                axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API}`)
+                axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`)
                     .then((res) => {
                         this.setState({ AQi: res.data }, () => {
                             console.log(this.state.AQi);

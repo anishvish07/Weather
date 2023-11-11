@@ -37,7 +37,7 @@
     margin-top: 5px;
 }
 
-@media screen and (min-width:402px) and (max-width: 576px) {
+@media screen and (min-width:395px) and (max-width: 576px) {
     .form-group input[type='search'] {
         width: 40%;
     }
@@ -179,7 +179,7 @@
     font-size: 5.5rem;
 }
 
-@media screen and (min-width:402px) and (max-width: 576px) {
+@media screen and (min-width:395px) and (max-width: 576px) {
     .border-design {
         width: auto;
         height: auto;
