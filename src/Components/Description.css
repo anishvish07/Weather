@@ -7,7 +7,7 @@
     animation: change 5s;
 }
 
-@media screen and (min-width: 402px) and (max-width: 576px) {
+@media screen and (min-width: 350px) and (max-width: 576px) {
     .containers {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
