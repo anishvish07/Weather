@@ -21,6 +21,8 @@ const Home = (props) => {
       }else if(AQi <=250){
           
         return "Very Poor";
+      }else if(AQi <=420){
+        return "Hazardous";
       }
   
     }

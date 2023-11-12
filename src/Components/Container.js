@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './Home';
-import Weather from './Weather';
+import ContactUsCard from './Contact';
 import './Container.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -115,7 +115,7 @@ weatherUpdateHandler = (e) => {
     </nav> 
       <Routes>
       <Route exact path="/" element={<Home weather={this.weatherUpdateHandler} weatherData = {weatherData ? weatherData : null} AQ = {AQi ? AQi : ''} AQi= {AQi ? AQi.list[0]?.components?.pm2_5  : ""} color ={color ? color : ''} humidity= {weatherData ? weatherData.main.humidity : ''} windSpeed={weatherData ? weatherData.wind.speed :""} pressure={weatherData ?weatherData.main.pressure : ""} temp_max ={weatherData?weatherData.main.temp_max:''} temp_min= {weatherData ? weatherData.main.temp_min :''} feels={weatherData ? weatherData.main.feels_like : ''} cityname ={weatherData ? weatherData.name : ''} temperature = {weatherData ? weatherData.main.temp : ''}  WeatherDescription={weatherData?weatherData.weather[0].description:''} />} />
-      <Route exact path='/Contact' element={<Weather/>}/>
+      <Route exact path='/Contact' element={<ContactUsCard/>}/>
       </Routes>
       </div>
       </div>
