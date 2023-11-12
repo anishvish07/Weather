@@ -6,7 +6,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Description from './Description';
 import 'animate.css';
-import ContactUsCard from './Weather';
+
 
 
 class Container extends Component {
